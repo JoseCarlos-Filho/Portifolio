@@ -1,6 +1,11 @@
 .header {
-  &__container {
-    &__image {
+  &__nav {
+    &__nav-link {
+      color: #fff;
+    }
+
+    &__nav-link:hover {
+      color: #e5b8f4;
     }
   }
 }
