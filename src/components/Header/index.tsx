@@ -1,5 +1,6 @@
 import { Card, Nav, Image, Container } from "react-bootstrap";
 import Foto from "./assets/minhafoto.jpeg";
+import { FaHome } from "react-icons/Fa";
 
 const Cabecalho = () => {
   return (
@@ -11,7 +12,7 @@ const Cabecalho = () => {
       >
         <Nav.Item as="li">
           <Nav.Link className="header__nav__nav-link" href="/home">
-            HOME
+            <FaHome />
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
