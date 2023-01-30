@@ -1,11 +1,16 @@
 .header {
+  background: linear-gradient(to bottom, #6a078b, #e5b8f4);
   &__nav {
     &__nav-link {
       color: #fff;
+      box-shadow: 5px 5px 10px #fff;
+      border-radius: 1rem;
+      margin-left: 12px;
+      background: #6a078b;
     }
 
     &__nav-link:hover {
-      color: #e5b8f4;
+      color: #fbf5fb;
     }
   }
 }
