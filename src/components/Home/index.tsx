@@ -14,7 +14,7 @@ const Home = () => {
         <h1 className="fs-1 text-white d-flex flex-column">
           José Carlos Rodrigues Filho
           <Badge bg="secondary" className="boxCard mt-4">
-            <h1 className="textInfo">Frontend Developer</h1>
+            <h1 className="">Frontend Developer</h1>
           </Badge>
         </h1>
         <Image
