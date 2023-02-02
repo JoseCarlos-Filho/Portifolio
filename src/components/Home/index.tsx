@@ -24,7 +24,7 @@ const Home = () => {
         />
       </Container>
       <div className="d-flex justify-content-center">
-        <div className="boxCard w-50 p-3 bg-secondary rounded-3">
+        <div className="boxCard w-50 mt-4 p-4 bg-secondary rounded-3">
           <p className="fs-3 text-white text-center textInfo">
             Desenvolvedor frontend com contribuições de projetos permanentes no
             GitHub, construção de single page application, landing pages,
