@@ -1,6 +1,9 @@
 import { Nav } from "react-bootstrap";
 import { FaHome } from "react-icons/Fa";
-import { AiOutlineFundProjectionScreen } from "react-icons/Ai";
+import {
+  AiOutlineFundProjectionScreen,
+  AiOutlineContacts,
+} from "react-icons/Ai";
 import { FcAbout } from "react-icons/Fc";
 
 const Cabecalho = () => {
@@ -11,22 +14,28 @@ const Cabecalho = () => {
         defaultActiveKey="/home"
         as="ul"
       >
-        <Nav.Item as="li" className="p-5">
+        <Nav.Item as="li">
           <Nav.Link className="header__nav__nav-link" href="/home">
-            Home
             <FaHome />
+            <h2 className="ps-2">Home</h2>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
           <Nav.Link className="header__nav__nav-link" eventKey="link-1">
-            Projetos
             <AiOutlineFundProjectionScreen />
+            <h2 className="ps-2">Projetos</h2>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
           <Nav.Link className="header__nav__nav-link" eventKey="link-2">
-            Sobre
             <FcAbout />
+            <h2 className="ps-2 header__nav__tittle">Sobre</h2>
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link className="header__nav__nav-link" eventKey="link-3">
+            <AiOutlineContacts />
+            <h2 className="ps-2 header__nav__tittle">Contato</h2>
           </Nav.Link>
         </Nav.Item>
       </Nav>
