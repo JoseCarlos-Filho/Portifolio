@@ -5,12 +5,21 @@
       color: #fff;
       box-shadow: 5px 5px 10px #fff;
       border-radius: 1rem;
-      margin-left: 12px;
+      margin-right: 2rem;
       background: #6a078b;
+      transition: transform 0.5s;
+
+      display: flex;
+      justify-content: space-between;
     }
 
     &__nav-link:hover {
-      color: #fbf5fb;
+      color: #f7f4f7;
+      transform: scale(1.1);
+    }
+
+    &__tittle:hover {
+      color: #989399;
     }
   }
 }
