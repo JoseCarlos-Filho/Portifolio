@@ -1,15 +1,13 @@
-// import {} from "react-bootstrap";
-import Cabecalho from "./components/Header";
-import Home from "./components/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Views/Home";
 function App() {
   return (
     <div className="App">
-      <Cabecalho />
-      <Home />
-      {/* <Button variant="primary">Primary</Button>{" "}
-      <Button className="btn-outro" variant="primary">
-        Teste
-      </Button>{" "} */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
