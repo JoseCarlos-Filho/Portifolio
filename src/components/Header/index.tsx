@@ -5,6 +5,7 @@ import {
   AiOutlineContacts,
 } from "react-icons/Ai";
 import { FcAbout } from "react-icons/Fc";
+import {} from "react-router-dom";
 
 const Cabecalho = () => {
   return (
@@ -15,25 +16,37 @@ const Cabecalho = () => {
         as="ul"
       >
         <Nav.Item as="li">
-          <Nav.Link className="header__nav__nav-link" href="/home">
+          <Nav.Link className="header__nav__nav-link" href="/">
             <FaHome />
             <h2 className="ps-2">Home</h2>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="header__nav__nav-link" eventKey="link-1">
+          <Nav.Link
+            className="header__nav__nav-link"
+            eventKey="link-1"
+            href="/projetos"
+          >
             <AiOutlineFundProjectionScreen />
             <h2 className="ps-2">Projetos</h2>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="header__nav__nav-link" eventKey="link-2">
+          <Nav.Link
+            className="header__nav__nav-link"
+            eventKey="link-2"
+            href="/sobre"
+          >
             <FcAbout />
             <h2 className="ps-2 header__nav__tittle">Sobre</h2>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
-          <Nav.Link className="header__nav__nav-link" eventKey="link-3">
+          <Nav.Link
+            className="header__nav__nav-link"
+            eventKey="libk-3"
+            href="/contato"
+          >
             <AiOutlineContacts />
             <h2 className="ps-2 header__nav__tittle">Contato</h2>
           </Nav.Link>
