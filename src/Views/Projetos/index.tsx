@@ -1,21 +1,87 @@
 import Cabecalho from "../../components/Header";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const Projetos = () => {
   return (
     <div>
       <Cabecalho />
       <h1>Página Projetos</h1>
-      <Container>
+      <Container className="mt-5">
         <Row>
-          <Col sm={4}>Card 1</Col>
-          <Col sm={4}>Card 2</Col>
-          <Col sm={4}>Card 3</Col>
+          <Col sm={4}>
+            <Card style={{ width: "18rem" }} className="mb-5">
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Projeto 1</Card.Title>
+                <Card.Text>
+                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
+                </Card.Text>
+                <Button variant="primary">Deploy</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col sm={4}>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Projeto 1</Card.Title>
+                <Card.Text>
+                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
+                </Card.Text>
+                <Button variant="primary">Deploy</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col sm={4}>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Projeto 1</Card.Title>
+                <Card.Text>
+                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
+                </Card.Text>
+                <Button variant="primary">Deploy</Button>
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
         <Row>
-          <Col sm>Card 4</Col>
-          <Col sm>Card 5</Col>
-          <Col sm>Card 6</Col>
+          <Col sm>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Projeto 1</Card.Title>
+                <Card.Text>
+                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
+                </Card.Text>
+                <Button variant="primary">Deploy</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col sm>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Projeto 1</Card.Title>
+                <Card.Text>
+                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
+                </Card.Text>
+                <Button variant="primary">Deploy</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col sm>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>Projeto 1</Card.Title>
+                <Card.Text>
+                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
+                </Card.Text>
+                <Button variant="primary">Deploy</Button>
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
       </Container>
     </div>
