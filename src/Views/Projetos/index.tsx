@@ -1,7 +1,16 @@
 import Cabecalho from "../../components/Header";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-
+import apiGit from "../../services/api";
+// import { Octokit } from "@octokit/rest";
+import { useEffect } from "react";
 const Projetos = () => {
+  async function LoginUser() {
+    const {
+      data: { login },
+    } = await apiGit.rest.users.getAuthenticated();
+    console.log("Hello, %s", login);
+  }
+  LoginUser();
   return (
     <div>
       <Cabecalho />
