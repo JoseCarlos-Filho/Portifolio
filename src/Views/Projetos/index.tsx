@@ -1,16 +1,24 @@
 import Cabecalho from "../../components/Header";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import apiGit from "../../services/api";
-// import { Octokit } from "@octokit/rest";
 import { useEffect } from "react";
+import ApiGit from "../../services/api";
+
 const Projetos = () => {
-  async function LoginUser() {
-    const {
-      data: { login },
-    } = await apiGit.rest.users.getAuthenticated();
-    console.log("Hello, %s", login);
-  }
-  LoginUser();
+  useEffect(() => {
+    async function getRepo() {
+      const { data } = await ApiGit.octokit.request(
+        "GET /repos/josecarlos-filho/Barbearia-Alura",
+        {
+          owner: "josecarlos-filho",
+          repo: "Barbearia-Alura",
+        }
+      );
+      console.log(data);
+      return data;
+    }
+    getRepo();
+  });
+
   return (
     <div>
       <Cabecalho />
