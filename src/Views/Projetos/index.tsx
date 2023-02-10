@@ -5,19 +5,9 @@ import ApiGit from "../../services/api";
 
 const Projetos = () => {
   useEffect(() => {
-    async function getRepo() {
-      const { data } = await ApiGit.octokit.request(
-        "GET /repos/josecarlos-filho/Barbearia-Alura",
-        {
-          owner: "josecarlos-filho",
-          repo: "Barbearia-Alura",
-        }
-      );
-      console.log(data);
-      return data;
-    }
-    getRepo();
-  });
+    const gitHub = new ApiGit();
+    gitHub.getRepo("josecarlos-filho", "Barbearia-Alura");
+  }, []);
 
   return (
     <div>
