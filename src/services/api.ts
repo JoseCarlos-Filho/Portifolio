@@ -2,25 +2,22 @@ import { Octokit } from "octokit";
 
 class ApiGit {
   octokit: Octokit;
-  static octokit: any;
 
   constructor() {
     this.octokit = new Octokit({
-      auth: "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",
+      auth: "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",
+      // baseUrl: "https://api.github.com/",
     });
   }
 
-  // async getRepo() {
-  //   const { data } = await this.octokit.request(
-  //     "GET /repos/josecarlos-filho/Barbearia-Alura",
-  //     {
-  //       owner: "josecarlos-filho",
-  //       repo: "Barbearia-Alura",
-  //     }
-  //   );
-  //   console.log(data);
-  //   return data;
-  // }
+  async getRepo(owner: string, repo: string) {
+    const { data } = await this.octokit.request("GET /repos/${owner}/${repo}", {
+      owner: owner,
+      repo: repo,
+    });
+    console.log(data);
+    return data;
+  }
 }
 
 export default ApiGit;
