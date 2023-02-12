@@ -6,7 +6,7 @@ import ApiGit from "../../services/api";
 const Projetos = () => {
   useEffect(() => {
     const gitHub = new ApiGit();
-    gitHub.getRepositorio(`josecarlos-filho`, `Barbearia-Alura`);
+    gitHub.getRepositorio("josecarlos-filho", "Barbearia-Alura");
   }, []);
 
   return (
