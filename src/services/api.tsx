@@ -5,7 +5,7 @@ class ApiGit {
 
   constructor() {
     this.octokit = new Octokit({
-      auth: "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",
+      auth: "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",
     });
   }
 
