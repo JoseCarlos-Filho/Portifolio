@@ -7,6 +7,7 @@ const Projetos = () => {
   useEffect(() => {
     const gitHub = new ApiGit();
     gitHub.getRepositorio("josecarlos-filho", "Barbearia-Alura");
+    gitHub.listRepos("josecarlos-filho");
   }, []);
 
   return (
@@ -19,7 +20,7 @@ const Projetos = () => {
             <Card style={{ width: "18rem" }} className="mb-5">
               <Card.Img variant="top" src="holder.js/100px180" />
               <Card.Body>
-                <Card.Title>Projeto 1</Card.Title>
+                <Card.Title></Card.Title>
                 <Card.Text>
                   Barbearia Alura desenvovido com as techs HTML5 e CSS3
                 </Card.Text>
