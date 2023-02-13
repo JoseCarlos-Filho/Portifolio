@@ -5,7 +5,7 @@ class ApiGit {
 
   constructor() {
     this.octokit = new Octokit({
-      auth: "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",
+      auth: "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",
     });
   }
 
@@ -15,7 +15,18 @@ class ApiGit {
       repo: repo,
     });
     console.log(data);
-    return data;
+    // return data;
+  }
+
+  async listRepos(username: string) {
+    const { data } = await this.octokit.request(
+      `GET /users/${username}/repos`,
+      {
+        username: username,
+      }
+    );
+    console.log(data);
+    // return data;
   }
 }
 
