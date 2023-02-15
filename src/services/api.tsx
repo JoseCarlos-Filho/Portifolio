@@ -26,7 +26,7 @@ class ApiGit {
       }
     );
     console.log(data);
-    // return data;
+    return data;
   }
 }
 
