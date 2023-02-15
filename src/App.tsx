@@ -3,6 +3,7 @@ import Contato from "./Views/Contato";
 import Home from "./Views/Home";
 import Projetos from "./Views/Projetos";
 import Sobre from "./Views/Sobre";
+
 function App() {
   return (
     <div className="App">
