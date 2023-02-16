@@ -1,13 +1,17 @@
 import Cabecalho from "../../components/Header";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ApiGit from "../../services/api";
+import { IPropsCardRepo } from "../../components/CardProjects/types";
+import CardProjetos from "../../components/CardProjects";
 
 const Projetos = () => {
+  const [data, setdata] = useState<IPropsCardRepo[]>([{}] as IPropsCardRepo[]);
+
   useEffect(() => {
     const gitHub = new ApiGit();
-    gitHub.getRepositorio("josecarlos-filho", "Barbearia-Alura");
-    gitHub.listRepos("josecarlos-filho");
+    // gitHub.getRepositorio("josecarlos-filho", "Barbearia-Alura");
+    gitHub.listRepos("josecarlos-filho").then((repos) => setdata(repos));
   }, []);
 
   return (
@@ -15,82 +19,23 @@ const Projetos = () => {
       <Cabecalho />
       <h1>Página Projetos</h1>
       <Container className="mt-5">
-        <Row>
-          <Col sm={4}>
-            <Card style={{ width: "18rem" }} className="mb-5">
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title></Card.Title>
-                <Card.Text>
-                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
-                </Card.Text>
-                <Button variant="primary">Deploy</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col sm={4}>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Projeto 1</Card.Title>
-                <Card.Text>
-                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
-                </Card.Text>
-                <Button variant="primary">Deploy</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col sm={4}>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Projeto 1</Card.Title>
-                <Card.Text>
-                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
-                </Card.Text>
-                <Button variant="primary">Deploy</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-        <Row>
-          <Col sm>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Projeto 1</Card.Title>
-                <Card.Text>
-                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
-                </Card.Text>
-                <Button variant="primary">Deploy</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col sm>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Projeto 1</Card.Title>
-                <Card.Text>
-                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
-                </Card.Text>
-                <Button variant="primary">Deploy</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col sm>
-            <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>Projeto 1</Card.Title>
-                <Card.Text>
-                  Barbearia Alura desenvovido com as techs HTML5 e CSS3
-                </Card.Text>
-                <Button variant="primary">Deploy</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
+        {data
+          ? data.map(
+              ({ id, name, description }: IPropsCardRepo, index: number) => {
+                return (
+                  <Row key={index}>
+                    <Col sm={4}>
+                      <CardProjetos
+                        id={id}
+                        name={name}
+                        description={description}
+                      />
+                    </Col>
+                  </Row>
+                );
+              }
+            )
+          : null}
       </Container>
     </div>
   );
