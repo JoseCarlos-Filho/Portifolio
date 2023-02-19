@@ -5,12 +5,40 @@ import ApiGit from "../../services/api";
 import { IPropsCardRepo } from "../../components/CardProjects/types";
 import CardProjetos from "../../components/CardProjects";
 
+interface Repo {
+  name: string;
+}
+
+const pinned: Repo[] = [
+  { name: "Barbearia-Alura" },
+  { name: "Lista-Tarefa-VueJS2x" },
+  { name: "Projeto-Buscador-de-CEP" },
+  { name: "Dashboard" },
+  { name: "Gallery-Photos" },
+  { name: "Challenge-Criptografia" },
+];
+
 const Projetos = () => {
   const [data, setdata] = useState<IPropsCardRepo[]>([{}] as IPropsCardRepo[]);
 
+  // const arrayRepo = [
+  //   "Barbearia-Alura",
+  //   "Lista-Tarefa-VueJS2x",
+  //   "Projeto-Buscador-de-CEP",
+  //   "Dashboard",
+  //   "Gallery-Photos",
+  //   "Challenge-Criptografia",
+  // ];
+
   useEffect(() => {
     const gitHub = new ApiGit();
-    // gitHub.getRepositorio("josecarlos-filho", "Barbearia-Alura");
+
+    const pinnedRepo = pinned.map((pinned) => {
+      gitHub.getRepositorio("josecarlos-filho", pinned.name);
+    });
+
+    console.log(pinnedRepo);
+
     gitHub.listRepos("josecarlos-filho").then((repos) => setdata(repos));
   }, []);
 
@@ -23,15 +51,13 @@ const Projetos = () => {
           ? data.map(
               ({ id, name, description }: IPropsCardRepo, index: number) => {
                 return (
-                  <Row key={index}>
-                    <Col sm={4}>
-                      <CardProjetos
-                        id={id}
-                        name={name}
-                        description={description}
-                      />
-                    </Col>
-                  </Row>
+                  <div key={index}>
+                    <CardProjetos
+                      id={id}
+                      name={name}
+                      description={description}
+                    />
+                  </div>
                 );
               }
             )
