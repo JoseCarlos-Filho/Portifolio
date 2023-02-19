@@ -23,6 +23,7 @@ class ApiGit {
       `GET /users/${username}/repos`,
       {
         username: username,
+        per_page: 6,
       }
     );
     console.log(data);
