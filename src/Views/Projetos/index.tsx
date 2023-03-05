@@ -16,15 +16,9 @@ const pinned = [
 
 const Projetos = () => {
   const [data, setdata] = useState<IPropsCardRepo[]>([{}] as IPropsCardRepo[]);
-
-  // const arrayRepo = [
-  //   "Barbearia-Alura",
-  //   "Lista-Tarefa-VueJS2x",
-  //   "Projeto-Buscador-de-CEP",
-  //   "Dashboard",
-  //   "Gallery-Photos",
-  //   "Challenge-Criptografia",
-  // ];
+  const [dataRepo, setDataRepo] = useState<IPropsCardRepo[]>([
+    {},
+  ] as IPropsCardRepo[]);
 
   useEffect(() => {
     const gitHub = new ApiGit();
