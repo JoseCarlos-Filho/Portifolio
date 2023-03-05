@@ -41,8 +41,8 @@ const Projetos = () => {
       <Cabecalho />
       <h1>Página Projetos</h1>
       <Container className="mt-5">
-        {data
-          ? data.map(
+        {dataRepo
+          ? dataRepo.map(
               ({ id, name, description }: IPropsCardRepo, index: number) => {
                 return (
                   <div key={index}>
