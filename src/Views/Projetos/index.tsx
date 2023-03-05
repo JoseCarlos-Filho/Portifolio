@@ -23,8 +23,13 @@ const Projetos = () => {
   useEffect(() => {
     const gitHub = new ApiGit();
 
-    const pinnedRepo = pinned.map((pinned) => {
-      gitHub.getRepositorio("josecarlos-filho", pinned.name);
+    const set: any = new Set();
+
+    pinned.map((name) => {
+      gitHub.getRepositorio("josecarlos-filho", name).then((value: any) => {
+        set.add(value);
+        setDataRepo([...set]);
+      });
     });
 
     console.log(pinnedRepo);
