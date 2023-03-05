@@ -32,8 +32,7 @@ const Projetos = () => {
       });
     });
 
-    console.log(pinnedRepo);
-
+    // Metodo get que lista todos os repositórios
     gitHub.listRepos("josecarlos-filho").then((repos) => setdata(repos));
   }, []);
 
