@@ -5,17 +5,13 @@ import ApiGit from "../../services/api";
 import { IPropsCardRepo } from "../../components/CardProjects/types";
 import CardProjetos from "../../components/CardProjects";
 
-interface Repo {
-  name: string;
-}
-
-const pinned: Repo[] = [
-  { name: "Barbearia-Alura" },
-  { name: "Lista-Tarefa-VueJS2x" },
-  { name: "Projeto-Buscador-de-CEP" },
-  { name: "Dashboard" },
-  { name: "Gallery-Photos" },
-  { name: "Challenge-Criptografia" },
+const pinned = [
+  "Barbearia-Alura",
+  "Lista-Tarefa-VueJS2x",
+  "Projeto-Buscador-de-CEP",
+  "Dashboard",
+  "Gallery-Photos",
+  "Challenge-Criptografia",
 ];
 
 const Projetos = () => {
