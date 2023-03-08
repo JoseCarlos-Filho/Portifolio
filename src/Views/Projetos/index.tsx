@@ -5,6 +5,8 @@ import ApiGit from "../../services/api";
 import { IPropsCardRepo } from "../../components/CardProjects/types";
 import CardProjetos from "../../components/CardProjects";
 
+const columnsPerRow = 2;
+
 const pinned = [
   "Barbearia-Alura",
   "Lista-Tarefa-VueJS2x",
@@ -45,13 +47,15 @@ const Projetos = () => {
           ? dataRepo.map(
               ({ id, name, description }: IPropsCardRepo, index: number) => {
                 return (
-                  <div key={index}>
-                    <CardProjetos
-                      id={id}
-                      name={name}
-                      description={description}
-                    />
-                  </div>
+                  <Col key={index} sm="4">
+                    <div>
+                      <CardProjetos
+                        id={id}
+                        name={name}
+                        description={description}
+                      />
+                    </div>
+                  </Col>
                 );
               }
             )
