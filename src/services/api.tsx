@@ -14,8 +14,8 @@ class ApiGit {
       owner: owner,
       repo: repo,
     });
-    console.log(data);
-    // return data;
+    // console.log(data);
+    return data;
   }
 
   async listRepos(username: string) {
@@ -26,7 +26,7 @@ class ApiGit {
         per_page: 6,
       }
     );
-    console.log(data);
+    // console.log(data);
     return data;
   }
 }
