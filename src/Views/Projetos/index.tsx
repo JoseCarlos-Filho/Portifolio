@@ -47,15 +47,13 @@ const Projetos = () => {
           ? dataRepo.map(
               ({ id, name, description }: IPropsCardRepo, index: number) => {
                 return (
-                  <Col key={index} sm="4">
-                    <div>
-                      <CardProjetos
-                        id={id}
-                        name={name}
-                        description={description}
-                      />
-                    </div>
-                  </Col>
+                  <div className="teste" key={index}>
+                    <CardProjetos
+                      id={id}
+                      name={name}
+                      description={description}
+                    />
+                  </div>
                 );
               }
             )
