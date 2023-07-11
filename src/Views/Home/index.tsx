@@ -10,9 +10,8 @@ const Home = () => {
       <Cabecalho />
       <div className="backgroundImage"
         style={{
-          backgroundImage: `url(${Background})`, 
+          backgroundImage: `url(${Background})`, width: "100vw", height: "auto"
         }}
-        
       >
         <Container className="d-flex justify-content-evenly align-items-center">
           <h1 className="fs-1 text-white d-flex flex-column">
