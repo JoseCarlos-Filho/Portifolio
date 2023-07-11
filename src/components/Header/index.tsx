@@ -18,7 +18,7 @@ const Cabecalho = () => {
         <Nav.Item as="li">
           <Nav.Link className="header__nav__nav-link" href="/">
             <FaHome />
-            <h2 className="ps-2">Home</h2>
+            <h2 className="ps-2 header__nav__tittle">Home</h2>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
@@ -28,7 +28,7 @@ const Cabecalho = () => {
             href="/projetos"
           >
             <AiOutlineFundProjectionScreen />
-            <h2 className="ps-2">Projetos</h2>
+            <h2 className="ps-2 header__nav__tittle">Projetos</h2>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as="li">
@@ -44,7 +44,7 @@ const Cabecalho = () => {
         <Nav.Item as="li">
           <Nav.Link
             className="header__nav__nav-link"
-            eventKey="libk-3"
+            eventKey="link-3"
             href="/contato"
           >
             <AiOutlineContacts />
